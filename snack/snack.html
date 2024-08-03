@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="snack.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <title>Makanan</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col">
+                <img src="cover.png" alt="cover">
+            </div>
+            <div class="col">
+                <h1>Snack Nikmat dan Praktis</h1>
+            </div>
+            <div class="col">
+                <img src="coverr.png" alt="cover">
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Cari nama snack..." onkeyup="searchMenu()">
+    </div>
+
+    <div class="containers text-center">
+        <div class="rows row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <div class="cols" data-name="Bronis Brownis Chocolatos">
+                <a href="bronis cokolatos/bronis.html">
+                    <img src="bronis cokolatos/judul.png" alt="Brownis Chocolatos">
+                    <br>
+                    <p>Brownies Chocolatos</p>
+                </a>
+            </div>
+            <div class="cols" data-name="Puding Nutrijell">
+                <a href="puding/puding.html">
+                    <img src="puding/judul.png" alt="Puding">
+                    <br>
+                    <p>Puding Nutrijell</p>
+                </a>
+            </div>
+            <div class="cols" data-name="Kentang goreng">
+                <a href="kentang goreng/kentang.html">
+                    <img src="kentang goreng/judul.png" alt="Kentang goreng">
+                    <br>
+                    <p>Kentang Goreng</p>
+                </a>
+            </div>
+            <div class="cols" data-name="Choco Lumpia Bites coklat cokelat">
+                <a href="coklat lumpia/coklat lumpia.html">
+                    <img src="coklat lumpia/judul.png" alt="Choco Lumpia Bites">
+                    <br>
+                    <p>Choco Lumpia Bites</p>
+                </a>
+            </div>
+            <div class="cols" data-name="Seblak">
+                <a href="seblak/seblak.html">
+                    <img src="cover.png" alt="Seblak">
+                    <br>
+                    <p>Seblak</p>
+                </a>
+            </div>
+        </div>
+    </div>   
+
+    <script>
+        function searchMenu() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const menuItems = document.getElementsByClassName('cols');
+            
+            for (let i = 0; i < menuItems.length; i++) {
+                const item = menuItems[i];
+                const itemName = item.getAttribute('data-name').toLowerCase();
+                
+                if (itemName.includes(input)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            }
+        }
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

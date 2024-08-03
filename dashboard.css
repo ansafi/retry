@@ -1,0 +1,306 @@
+* {
+    /*mengatur semua cover*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    background-image: url(img/bg.png);
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.top-bar {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    /* Memisahkan elemen ke kiri dan kanan */
+    align-items: center;
+    width: 75%;
+    height: 70px;
+    padding: 20px;
+    /* Memberikan padding untuk ruang di sekitar elemen */
+    box-sizing: border-box;
+    /* Memastikan padding tidak menambah lebar total */
+    position: relative;
+    top: 10px;
+    margin: auto;
+    z-index: 2;
+    /* Memastikan top-bar berada di atas gambar header */
+}
+
+
+.menu-container {
+    position: relative;
+}
+
+.hamburger-menu {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f4f4f4;
+}
+
+.show {
+    display: block;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.header img {
+    /*mengatur supaya full kanan-kiri*/
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Mengatur kontainer */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    /* Atur lebar maksimum kontainer */
+    margin: 0 auto;
+    /* Center kontainer di layar */
+    padding: 20px;
+    /* Menambahkan padding di sekitar kontainer */
+    margin-left: 20px;
+}
+
+/* Mengatur baris */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Agar kolom bergerak ke baris berikutnya jika tidak muat */
+    gap: 20px;
+    /* Jarak antara kolom */
+}
+
+/* Mengatur kolom */
+.col {
+    flex: 1;
+    /* Mengatur kolom untuk mengambil ruang yang sama */
+    padding: 20px;
+    /* Menambahkan padding di sekitar kolom */
+    box-sizing: border-box;
+    /* Memastikan padding tidak menambah lebar elemen */
+    text-align: center;
+    /* Menempatkan teks di tengah kolom */
+    border-radius: 8px;
+    /* Menambahkan sudut yang melengkung */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Transisi untuk efek hover */
+}
+
+/* Efek hover pada kolom */
+/* .col:hover {
+            background-color: #e9ecef;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        } */
+
+/* Responsif untuk grid 2 kolom pada layar lebih kecil */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        /* Menumpuk kolom di layar kecil */
+    }
+}
+
+.benefit {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.row {
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.Selengkapnya {
+    flex-direction: column;
+    text-align: left;
+}
+
+.Selengkapnya p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+}
+
+.img_bahan img {
+    width: 100%;
+    max-width: 400px;
+}
+
+#button {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    font-family: Cambria, Georgia, Times, 'Times New Roman';
+    font-size: medium;
+    width: auto;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#button:hover {
+    background-color: #d4e72a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #d4e72a;
+}
+
+
+
+
+.food {
+    display: flex;
+    flex-direction: column; /* Mengatur elemen dalam satu kolom, ubah jika perlu */
+    height: 100vh; /* Mengatur kontainer agar memuat seluruh tinggi layar */
+}
+
+.makanan, .minuman, .snack {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.makanan {
+    background-image: url(img/mkn.png); /* Ganti dengan latar belakang makanan */
+}
+
+.minuman {
+    background-image: url(img/Minuman.png); /* Ganti dengan latar belakang minuman */
+}
+.snack{
+    background-image: url(img/snack.png);
+}
+
+.makanan img, .minuman img, .snack img{
+    max-width: 100%; /* Menyesuaikan lebar gambar */
+    height: auto; /* Menjaga proporsi gambar */
+    transition: transform 0.3s ease;
+}
+.makanan img:hover, .minuman img:hover, .snack img:hover {
+    transform: scale(1.05); /* Memperbesar gambar sedikit */
+}
+
+
+.cardd {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.10); /* Warna putih dengan 80% opacity */
+    margin: 20px;
+}
+
+.card .blockquote {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #b1b1b1;
+    font-style: italic;
+    text-align: center;
+}
+
+.card .blockquote-footer {
+    font-size: 0.9em;
+    color: #858585;
+    text-align: center;
+}
+
+.card .blockquote-footer cite {
+    font-style: italic;
+    color: #007bff;
+}
+
+
+
+
+
+/*mengubah topbar menjadi fixed tetapi posisi tetap ditengah menggunakan dibawah ini*/
+/* .top-bar {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    height: 70px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed; /* Mengatur posisi fixed agar tetap di atas halaman */
+    /* top: 0; Menempatkan elemen di bagian atas halaman */
+    /* left: 50%; Menempatkan elemen di tengah horizontal */
+    /* transform: translateX(-50%); Menyesuaikan posisi horizontal agar berada di tengah */
+    /* z-index: 2; Memastikan top-bar berada di atas elemen lain */
+/* } */
+
+/* Agar konten di bawah tidak tertutup oleh top-bar */
+/* .content {
+    padding-top: 90px; Memberikan jarak di atas konten utama untuk menghindari tumpang tindih dengan top-bar */
+/* }  */

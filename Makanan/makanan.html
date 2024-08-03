@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="masakan.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <title>Makanan</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="resep">
+        <h1>Resep Makanan</h1>
+        <img src="cover.png" alt="">
+    </div>
+
+    
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Cari nama makanan..." onkeyup="searchMenu()">
+    </div>
+
+    <div class="containeer text-center">
+        <div class="rows row-cols-5">
+            <div class="cols" data-name="Opor Ayam Tahu">
+                <a href="opor/Opor Ayam.html"><img src="opor/Opor Ayam.png" alt="opor"></a>
+            </div>
+            <div class="cols" data-name="Telur Teriyaki">
+                <a href="telur teriyaki/Telur Teriyaki.html"><img src="telur teriyaki/telur teriyaki.png" alt="telur teriyaki"></a>
+            </div>
+            <div class="cols" data-name="Telur Geprek">
+                <a href="telur geprek/telur geprek.html"><img src="telur geprek/telur geprek.png" alt="Telur Geprek"></a>
+            </div>
+            <div class="cols" data-name="Semur Telur tahu">
+                <a href="semur telur/Semur Telur.html"><img src="semur telur/semur telur.png" alt="semur telur"></a>
+            </div>
+            <div class="cols" data-name="Omelet mie telur">
+                <a href="omelet/Omelet.html"><img src="omelet/omelet.png" alt="omelet"></a>
+            </div>
+            <div class="cols" data-name="Mie Goreng">
+                <a href="mie goreng/Mie Goreng.html"><img src="mie goreng/mie goreng.png" alt="Mie Goreng"></a>
+            </div>
+            <div class="cols" data-name="Bihun Goreng">
+                <a href="bihun/bihun.html"><img src="bihun/bihun goreng.png" alt="Bihun Goreng"></a>
+            </div>
+            <div class="cols" data-name="Tumis Tahu Sosis wortel">
+                <a href="tumis tahu sosis/Tumis Tahu Sosis.html"><img src="tumis tahu sosis/tumis tahu sosis.png" alt="Tumis Tahu Sosis"></a>
+            </div>
+            <div class="cols" data-name="sawi pakcoy pokchoy bawang putih">
+                <a href="pakcoy baput/pakcoy.html"><img src="pakcoy baput/pakcoy baput.png" alt="pakcoy baput"></a>
+            </div>
+            <div class="cols" data-name="Ayam Katsu">
+                <a href="ayam katsu/ayam katsu.html"><img src="ayam katsu/ayam katsu.png" alt="ayam katsu"></a>
+            </div>
+            <div class="cols" data-name="sambel sambal tempe tahu">
+                <a href="sambal tempe/sambal tempe.html"><img src="sambal tempe/sambal tempe.png" alt="sambal tempe"></a>
+            </div>
+            <div class="cols" data-name="">
+                <a href=".html"><img src="img/" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchMenu() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const menuItems = document.getElementsByClassName('cols');
+            
+            for (let i = 0; i < menuItems.length; i++) {
+                const item = menuItems[i];
+                const itemName = item.getAttribute('data-name').toLowerCase();
+                
+                if (itemName.includes(input)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            }
+        }
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
